@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA SHOP | Bolsos de mujer</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf6f0;color:#29221f;font-family:Arial,sans-serif}
+header,.aviso,footer{text-align:center;padding:20px}
+.aviso{background:#29221f;color:white;font-size:12px;letter-spacing:2px}
+.logo{font: bold 28px Georgia,serif;letter-spacing:2px}
+.logo span{color:#b08a5a}
+.hero{background:#ead6ce;text-align:center;padding:55px 20px}
+h1,h2{font-family:Georgia,serif;font-weight:normal}
+h1{font-size:48px}
+.boton{display:inline-block;background:#29221f;color:white;padding:14px 22px;text-decoration:none}
+.catalogo{padding:35px 5%}
+.titulo{text-align:center;margin-bottom:25px}
+.productos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.producto{min-width:0}
+.foto{height:190px;display:flex;align-items:center;justify-content:center;background:#eee0d4}
+.producto:nth-child(2) .foto{background:#dedfd7}
+.producto:nth-child(3) .foto{background:#ebdadd}
+.producto:nth-child(4) .foto{background:#e5d8c2}
+.bolso{width:115px;height:90px;position:relative;margin-top:25px}
+.cuerpo{position:absolute;bottom:0;left:5px;right:5px;height:70px;background:#9c6047;border:2px solid #704630;border-radius:12px 12px 18px 18px}
+.asa{position:absolute;top:-20px;left:32px;width:50px;height:38px;border:7px solid #704630;border-bottom:0;border-radius:30px 30px 0 0}
+.solapa{position:absolute;top:18px;left:5px;right:5px;height:28px;background:#b77b5e;border-bottom:2px solid #704630;border-radius:8px}
+.cierre{position:absolute;top:30px;left:calc(50% - 4px);width:8px;height:10px;background:#d5b16e}
+.modelo2 .cuerpo{background:#38413f;border-color:#222b29}.modelo2 .asa{border-color:#222b29}.modelo2 .solapa{background:#4c5854;border-color:#222b29}
+.modelo3 .cuerpo{background:#c18491;border-color:#905c67}.modelo3 .asa{border-color:#905c67}.modelo3 .solapa{background:#d59ba5;border-color:#905c67}
+.modelo4 .cuerpo{background:#d1b78e;border-color:#9b8059}.modelo4 .asa{border-color:#9b8059}.modelo4 .solapa{background:#e2cba6;border-color:#9b8059}
+h3{font-size:15px;font-weight:normal}
+.descripcion{font-size:12px;color:#81766d}
+.precio{font-weight:bold}
+.agregar{width:100%;padding:12px 4px;margin:12px 0;border:1px solid #cfc0b2;background:transparent;cursor:pointer;font-size:10px}
+.banner{margin:0 5% 35px;background:#29221f;color:white;padding:25px}
+footer{font-size:12px;color:#81766d}
+@media(min-width:700px){.productos{grid-template-columns:repeat(4,minmax(0,1fr))}.foto{height:240px}}
+</style>
+</head>
+<body>
+<div class="aviso">NUEVA COLECCIÓN · ESTILO PARA CADA DÍA</div>
+<header><div class="logo">NEXORA <span>SHOP</span></div><p>🛍 Bolsa: <strong id="cantidad">0</strong></p></header>
+<section class="hero">
+<p>COLECCIÓN SELECCIONADA</p>
+<h1>Tu estilo,<br>tu historia.</h1>
+<p>Bolsos con personalidad para acompañarte cada día.</p>
+<a class="boton" href="#coleccion">DESCUBRIR BOLSOS</a>
+</section>
+<main>
+<section class="catalogo" id="coleccion">
+<div class="titulo"><h2>Bolsos para enamorarte</h2><p>Encuentra tu próximo bolso favorito.</p></div>
+<div class="productos">
+<article class="producto"><div class="foto"><div class="bolso"><div class="asa"></div><div class="cuerpo"></div><div class="solapa"></div><div class="cierre"></div></div></div><h3>Bolso Ámbar</h3><p class="descripcion">Bandolera · Marrón coñac</p><p class="precio">29,95 €</p><button class="agregar" onclick="agregar('Bolso Ámbar',29.95)">AÑADIR A LA BOLSA</button></article>
+<article class="producto"><div class="foto"><div class="bolso modelo2"><div class="asa"></div><div class="cuerpo"></div><div class="solapa"></div><div class="cierre"></div></div></div><h3>Bolso Nocturno</h3><p class="descripcion">Bolso de mano · Verde oscuro</p><p class="precio">34,95 €</p><button class="agregar" onclick="agregar('Bolso Nocturno',34.95)">AÑADIR A LA BOLSA</button></article>
+<article class="producto"><div class="foto"><div class="bolso modelo3"><div class="asa"></div><div class="cuerpo"></div><div class="solapa"></div><div class="cierre"></div></div></div><h3>Bolso Rosa Nude</h3><p class="descripcion">Mini bolso · Rosa empolvado</p><p class="precio">24,95 €</p><button class="agregar" onclick="agregar('Bolso Rosa Nude',24.95)">AÑADIR A LA BOLSA</button></article>
+<article class="producto"><div class="foto"><div class="bolso modelo4"><div class="asa"></div><div class="cuerpo"></div><div class="solapa"></div><div class="cierre"></div></div></div><h3>Bolso Arena</h3><p class="descripcion">Bolso diario · Beige</p><p class="precio">27,95 €</p><button class="agregar" onclick="agregar('Bolso Arena',27.95)">AÑADIR A LA BOLSA</button></article>
+</div>
+</section>
+<section class="banner"><h2>Los pequeños detalles lo cambian todo.</h2><p>Diseño, estilo y personalidad.</p></section>
+</main>
+<footer>NEXORA SHOP · DEMOSTRACIÓN<br>Modelos y precios ficticios. No se procesan pagos.</footer>
+<script>
+let cantidad=0,total=0;
+function agregar(nombre,precio){cantidad++;total+=precio;document.getElementById('cantidad').textContent=cantidad;alert(nombre+' añadido a la bolsa.\nUnidades: '+cantidad+'\nTotal: '+total.toFixed(2)+' €\n\nDemostración: no admite pagos reales.');}
+</script>
+</body>
+</html>
